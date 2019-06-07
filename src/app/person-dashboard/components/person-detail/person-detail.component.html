@@ -1,0 +1,30 @@
+<span
+  class="status-false"
+  [ngStyle]="{ backgroundColor: detail.checked ? 'green' : 'red' }"
+></span>
+<div *ngIf="editing">
+  <input
+    type="text"
+    [value]="detail.name"
+    (input)="onNameChange(name.value)"
+    #name
+  />
+</div>
+<div *ngIf="!editing">
+  {{ detail.name + detail.surname }}
+</div>
+<p>
+  Check in date:
+  {{
+    detail.checkedInDate
+      ? (detail.checkedInDate | date: "yMMMMd" | uppercase)
+      : "Not checked"
+  }}
+</p>
+<div class="children">Children: {{ detail.children?.length || 0 }}</div>
+
+<button (click)="toggleEdit()">
+  {{ editing ? "done" : "edit" }}
+</button>
+
+<button (click)="onRemove()">Remove</button>

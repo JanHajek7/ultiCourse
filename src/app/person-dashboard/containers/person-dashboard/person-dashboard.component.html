@@ -1,0 +1,11 @@
+<div>
+  <person-count [items]="Persons"></person-count>
+  <div *ngFor="let person of Persons">{{ person.name }}</div>
+  <person-detail
+    *ngFor="let person of Persons"
+    [detail]="person"
+    (edit)="handleEdit($event)"
+    (remove)="handleRemove($event)"
+  >
+  </person-detail>
+</div>

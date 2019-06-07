@@ -1,0 +1,15 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 20%;
+}
+
+input {
+  margin: 20px;
+}
+
+li {
+  list-style: none;
+}
